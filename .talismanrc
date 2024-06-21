@@ -1,0 +1,36 @@
+fileignoreconfig:
+- filename: .idea/sonarlint/issuestore/index.pb
+  checksum: a16f41ee29f9a1fb52a9efc0b8b72f6d511509a52d778577c2acfec7fcb1a88c
+- filename: .idea/sonarlint/securityhotspotstore/index.pb
+  checksum: 2c3ba1265d09aa40905a753145292fc1ae7f2b636b1a24ad0a96734edd91959f
+- filename: .idea/uiDesigner.xml
+  checksum: 146eeae797db9b77bb04bd43a344aea620f5f739914e4e1566b396f9912ee6f4
+- filename: report1.html
+  checksum: 539365eb4c95d19846cf626516cebb6ca520c804ac1a58b84b973972e48c70b7
+- filename: src/test/java/PageComponent/CheckOutPage.java
+  checksum: 3fe38049588417b8730e5a2ba3a8fe4c012c515f8576a86b32ea5a0fb44a0a9d
+- filename: src/test/java/PageComponent/CreteAccountPage.java
+  checksum: 888c41ccda8f7481764e6c4d980748424083b201ef9a9e7bff5141a3b6cf43c8
+- filename: src/test/java/PageComponent/LoginPage.java
+  checksum: 2c2246d1dbed739601ad275d96dd45b5cbeff90a42e4c7176ae56b1386ad3fc0
+- filename: src/test/java/TestComponent/testCase01_navigatingToBestBuy.java
+  checksum: be5c0b346730c242f77296f2a219b3a31c259de365de4e331aa62604cd0cee24
+- filename: src/test/java/TestComponent/testCase02_validatingLink.java
+  checksum: ff9278adb27ea066fc54f4df85c75b31eb34d1c4eb620610fb770e80a191f497
+- filename: src/test/java/TestComponent/testCase03_createAccountFunctionality.java
+  checksum: 55eb7007bcaeb32866eb6eccc0972c95a32e73f89867e619eeeddb1a4c3a164b
+- filename: src/test/java/TestComponent/testCase05_validatingAllMenus.java
+  checksum: 876a8317765887db194ea5d768b7c60d89792b3ade591d94496acafba61b00fe
+- filename: src/test/java/TestComponent/testCase06_validatingBottomLinks.java
+  checksum: a373406b33ef121ee4498d15f40c3799f126655d5b7707a30d19cb67ffeeeb84
+- filename: src/test/java/TestComponent/testCase07_searchAddItemInCart.java
+  checksum: d6e36dbfba63c2f788eedc661fac994719cf1e6209192be4504b634dc0c8a4cb
+- filename: src/test/java/TestComponent/testCase08_SelectMenuByDepartment.java
+  checksum: 96b74579e6079851a12d17aaf14259f0ea008fbfa1bf3f062e5fd973d07bc9d3
+- filename: src/test/java/TestComponent/testCase09_SelectMenuByBrand.java
+  checksum: 3e8d23a62d3fd4bcadaa457a3ded7390a4f604345421fff329588886c9e3215d
+- filename: src/test/java/TestComponent/testCase10_CheckoutPage.java
+  checksum: c8050f1b91043fd095d2074749b48010e9bb7b9cc3ce6f9f285d30ae097dd331
+- filename: src/test/java/TestComponent/testcase04_signInFunctionality.java
+  checksum: aade0d29cd3e123416ff9f83419b80e03959110c897208b8ca2d183e85343875
+version: "1.0"

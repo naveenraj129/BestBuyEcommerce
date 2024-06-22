@@ -18,7 +18,7 @@ public class WebUtility extends GeneralUtility {
 
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
+       waitImplicit();
 
     }
 
@@ -46,9 +46,15 @@ public class WebUtility extends GeneralUtility {
         element.click();
     }
 
+
+
     public static String getTitleOfMenus() {
         waitExplicitUntillTitle(driver.getTitle());
         return driver.getTitle();
+    }
+
+    public static void waitImplicit() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
     }
 
     public static void waitExplicitUntillTitle(String titleToWait) {

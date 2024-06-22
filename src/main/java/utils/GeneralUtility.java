@@ -24,6 +24,9 @@ public class GeneralUtility {
     public static ExtentReports report;
     public static ExtentTest test;
     public static String sheetName;
+    public String testName;
+    public String testDescription;
+    public String testCategory;
     static String urlToCheck = "https://www.bestbuy.com/";
 
 
@@ -50,7 +53,7 @@ public class GeneralUtility {
     }
 
     public static Object[][] dataReader(String sheetName) throws IOException {
-        String excelPath = "/Users/evanjalinkirthika/Desktop/book1.xlsx";
+        String excelPath = "/Users/evanjalinkirthika/Documents/BestBuyEcommerce.xlsx";
         FileInputStream excelFile = new FileInputStream(excelPath);
         XSSFWorkbook workBook = new XSSFWorkbook(excelFile);
         XSSFSheet sheet = workBook.getSheet(sheetName);

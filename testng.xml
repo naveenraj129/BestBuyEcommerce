@@ -4,7 +4,10 @@
     <test name="Test1">
 
         <classes>
-            <class name="TestComponent.testCase03_createAccountFunctionality"/>
+            <class name="testComponent.TestCase_01_navigatingToBestBuyWebsite"/>
+            <class name="testComponent.TestCase_02_validateLink"/>
+            <class name="testComponent.TestCase_03_validateCreateAccountFunctionality"/>
+            <class name="testComponent.Testcase_04_validateSignInFunctionality"/>
         </classes>
     </test>
 

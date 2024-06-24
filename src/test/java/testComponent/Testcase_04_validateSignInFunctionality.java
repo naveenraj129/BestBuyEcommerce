@@ -1,6 +1,8 @@
 package testComponent;
 
 import engineComponent.BaseClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import pageComponent.HomePage;
 import pageComponent.LocationPage;
 import pageComponent.LoginPage;

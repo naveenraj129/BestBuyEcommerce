@@ -49,8 +49,6 @@ public class CheckOutPage {
     @FindBy(id = "cvv")
     WebElement cvv;
 
-    @FindBy(id = "save-to-profile")
-    WebElement saveToProfile;
 
     @FindBy(xpath = "//input[@aria-labelledby='first-name-help']")
     WebElement firstName;
@@ -64,12 +62,6 @@ public class CheckOutPage {
 
     @FindBy(xpath = "//input[@aria-labelledby='city-help']")
     WebElement city;
-
-    @FindBy(id = "//button[text()='Edit this address']")
-    WebElement editThisAddress;
-
-    @FindBy(id = "//button[text()='Add a new address']")
-    WebElement addNewAddress;
 
 
     @FindBy(xpath = "//select[@id='state']")

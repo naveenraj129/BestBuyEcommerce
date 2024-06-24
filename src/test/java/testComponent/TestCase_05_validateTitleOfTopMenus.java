@@ -2,30 +2,34 @@ package testComponent;
 
 import com.aventstack.extentreports.Status;
 import engineComponent.BaseClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageComponent.HomePage;
 import pageComponent.LocationPage;
 
-public class TestCase_05_validateAllMenus extends BaseClass {
+public class TestCase_05_validateTitleOfTopMenus extends BaseClass {
 
     @BeforeTest
     public void setup() {
-        sheetName = "sheet1";
+        testName = "tc_05_validateTitleOfTopMenus";
+        testDescription = "Check the different menu titles";
+        testCategory = "Regression";
+        sheetName = "TopMenuData";
     }
 
 
     @Test(dataProvider = "getFromExcel", priority = 5)
-    public void testcase1(String menuName, String expTitle) {
+    public void tc_05_validateTitleOfTopMenus(String menuName, String expTitle) {
         LocationPage lp = new LocationPage();
         lp.deliveryAtUSA();
         HomePage hp = new HomePage();
         String actTitle = hp.topMenusValidation(menuName);
         softAssert(actTitle, expTitle);
         if (actTitle.equals(expTitle)) {
-            test.log(Status.PASS, "ValidatingMenusFunctionality passed");
+            test.log(Status.PASS, testName + " - Passed");
         } else {
-            test.log(Status.FAIL, "ValidatingMenusFunctionality Failed");
+            test.log(Status.FAIL, testName + " - Failed");
         }
     }
 }

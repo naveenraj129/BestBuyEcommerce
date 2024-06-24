@@ -10,6 +10,7 @@ public class BaseClass extends WebUtility {
 
     @BeforeSuite
     public void startReport() {
+
         reportInit();
     }
 

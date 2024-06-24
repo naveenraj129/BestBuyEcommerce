@@ -14,7 +14,7 @@ public class CartPage extends WebUtility {
     @FindBy(xpath = "//a[contains(text(),'Lenovo - ThinkPad E14 Gen 5 14\" Touch-Screen Laptop - i5-1335U with 16GB Memory - 512GB SSD - Black')]")
     WebElement lenovoThinkPadAddedInCart;
 
-    @FindBy(xpath = "//a[text() = 'Sony - 65\" Class BRAVIA XR A80L OLED 4K UHD Smart Google TV']")
+    @FindBy(xpath = "//a[contains(text(),'Sony - 55\" Class X80K LED 4K UHD Smart Google TV')]")
     WebElement sonyTvTitleAtCart;
 
     @FindBy(xpath = "//button[text()='Checkout']")

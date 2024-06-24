@@ -11,20 +11,22 @@ public class TestCase_06_validateBottomLinks extends BaseClass {
 
     @BeforeTest
     public void setup() {
-        sheetName="sheet2";
+        testName = "tc_06_validateLinkInBottomOfHomePage";
+        testDescription = "Validating Link in Homepage Bottom";
+        testCategory = "Regression";
+        sheetName = "BottomMenuData";
     }
-
     @Test(dataProvider="getFromExcel")
-    public void testcase1(String menuName,String expTitle) throws Exception {
+    public void tc_06_validateLinkInBottomOfHomePage(String menuName,String expTitle) throws Exception {
         LocationPage lp=new LocationPage();
         lp.deliveryAtUSA();
         HomePage hp=new HomePage();
         String actTitle = hp.bottomMenusValidation(menuName);
         softAssert(actTitle, expTitle);
         if (actTitle.equals(expTitle)) {
-            test.log(Status.PASS , "ValidatingBottomMenusFunctionality passed");
+            test.log(Status.PASS, testName + " - Passed");
         } else {
-            test.log(Status.FAIL , "ValidatingBottomMenusFunctionality Failed");
+            test.log(Status.FAIL, testName + " - Failed");
         }
     }
 

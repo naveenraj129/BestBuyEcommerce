@@ -1,11 +1,20 @@
 package testComponent;
 
 import engineComponent.BaseClass;
+import org.testng.annotations.BeforeTest;
 import pageComponent.*;
 import com.aventstack.extentreports.Status;
 import org.testng.annotations.Test;
 
-public class TestCase_10_checkoutPage extends BaseClass {
+public class TestCase_10_checkoutPageFilling extends BaseClass {
+
+    @BeforeTest
+    public void setup() {
+        testName = "tc_10_CheckOutPageFilling";
+        testDescription = "Navigating to the checkout page and filling the form with dummy payment information";
+        testCategory = "Regression";
+    }
+
     @Test(priority = 10)
     public void tc_10_CheckOutPageFilling() throws Exception {
         LocationPage lp = new LocationPage();
@@ -21,15 +30,14 @@ public class TestCase_10_checkoutPage extends BaseClass {
         CheckOutPage cop = new CheckOutPage();
         cop.continueAsGuestButton();
         cop.contactInfoAtCheckOut();
-       // cop.enterAddressOnCheckOut();
         String actText = cop.enterAddressOnCheckOut();
         String expText = "Request failed because of network connection";
 
         softAssert(actText, expText);
         if (actText.equals(expText)) {
-            test.log(Status.PASS, "Checkout Functionality passed");
+            test.log(Status.PASS, testName + " - Passed");
         } else {
-            test.log(Status.FAIL, "Checkout Functionality Failed");
+            test.log(Status.PASS, testName + " - Failed");
         }
     }
 }

@@ -18,7 +18,10 @@ public class HomePage extends WebUtility {
     @FindBy(xpath = "//a[text()='Yes, Best Buy Sells That']")
     WebElement bestBuySellsMenu;
 
-    @FindBy(xpath = "//span[text()='My Best Buy Memberships']")
+//    @FindBy(xpath = "//span[text()='More']")
+//    WebElement moreMenu;
+
+    @FindBy(xpath = "//a[text()='My Best Buy Memberships']")
     WebElement bestBuyMembershipMenu;
 
     @FindBy(xpath = "//a[text()='Credit Cards']")
@@ -26,6 +29,9 @@ public class HomePage extends WebUtility {
 
     @FindBy(xpath = "//a[text()='Gift Cards']")
     WebElement giftCardsMenu;
+
+    @FindBy(xpath = "//a[text()='Gift Ideas']")
+    WebElement giftIdeasMenu;
 
     @FindBy(xpath = "//a[text()='Yardbird']")
     WebElement yardBirdMenu;
@@ -40,6 +46,9 @@ public class HomePage extends WebUtility {
     WebElement shopWithExpertMenu;
 
 
+
+
+
     @FindBy(xpath = "//span[text()='Account']")
     WebElement account;
     @FindBy(xpath = "//a[text()='Create Account']")
@@ -51,10 +60,10 @@ public class HomePage extends WebUtility {
     @FindBy(xpath = "//span[text() = 'Hi, Naveen']")
     WebElement signInSuccessful;
 
-    @FindBy(xpath = "//button[@aria-label='Menu']")
+    @FindBy(xpath = "//button[text() ='Menu']")
     WebElement menuButton;
 
-    @FindBy(xpath = "//button[@data-lid='ubr_tv']")
+    @FindBy(xpath = "//button[text() ='TV & Home Theater']")
     WebElement tvInMenu;
 
     @FindBy(xpath = "//button[text()='TVs by Brand']")
@@ -180,6 +189,7 @@ public class HomePage extends WebUtility {
     }
 
     public void selectShopByDepartment(){
+        explicitWait(tvInMenu , 15);
         eleClick(tvInMenu , 15);
         eleClick(tvsByBrandInnerMenu1 , 15);
         eleClick(sonyTvsInnerMenu2 , 15);

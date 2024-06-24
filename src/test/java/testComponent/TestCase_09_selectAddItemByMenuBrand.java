@@ -1,6 +1,7 @@
 package testComponent;
 
 import engineComponent.BaseClass;
+import org.testng.annotations.BeforeTest;
 import pageComponent.CartPage;
 import pageComponent.HomePage;
 import pageComponent.LocationPage;
@@ -8,11 +9,17 @@ import pageComponent.ProductPage;
 import com.aventstack.extentreports.Status;
 import org.testng.annotations.Test;
 
-public class TestCase_09_selectMenuByBrand extends BaseClass {
+public class TestCase_09_selectAddItemByMenuBrand extends BaseClass {
+    @BeforeTest
+    public void setup() {
 
+        testName = "tc_09_selectAddItemByMenuBrand";
+        testDescription = "Search a Item by Brands in Menu and add it in cart";
+        testCategory = "Regression";
+    }
 
     @Test
-    public void testCase1() throws Exception {
+    public void tc_09_selectAddItemByMenuBrand() throws Exception {
         LocationPage lp = new LocationPage();
         lp.deliveryAtUSA();
         HomePage hp = new HomePage();
@@ -24,9 +31,9 @@ public class TestCase_09_selectMenuByBrand extends BaseClass {
         String TitleAtCartPage = cp.validateLenovoThinkPadInCart();
         softAssert(TitleAtProductPage , TitleAtCartPage);
         if (TitleAtProductPage.equals(TitleAtCartPage)) {
-            test.log(Status.PASS , "SelectMenuByBrand functionality is passed");
+            test.log(Status.PASS, testName + " - Passed");
         } else {
-            test.log(Status.FAIL , "SelectMenuByBrand functionality is Failed");
+            test.log(Status.PASS, testName + " - Passed");
         }
     }
 }

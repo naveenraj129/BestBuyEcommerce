@@ -15,6 +15,9 @@ public class ProductPage extends WebUtility {
     @FindBy(xpath = "//button[text() = 'Add to Cart']")
     List<WebElement> addToCartButtons;
 
+    @FindBy(xpath = "//button[text() = 'Add to Cart']")
+    WebElement addToCartButton;
+
     @FindBy(xpath = "//button[text() = 'Continue shopping']")
     WebElement continueShopButtton;
 
@@ -27,7 +30,7 @@ public class ProductPage extends WebUtility {
     @FindBy(xpath = "//button[@data-button-state='ADD_TO_CART']")
     WebElement addToCartLenovoThinkPad;
 
-    @FindBy(xpath = "//a[text() ='Sony - 65\" Class BRAVIA XR A80L OLED 4K UHD Smart Google TV']")
+    @FindBy(xpath = "//a[contains(text(),'Sony - 55\" Class X80K LED 4K UHD Smart Google TV')]")
     WebElement sonyTvTitleAtProductPage;
 
     @FindBy(xpath = "//button[@data-button-state='ADD_TO_CART']")
@@ -43,7 +46,6 @@ public class ProductPage extends WebUtility {
         waitExplicit(addToCartButtons.get(0), 15);
         Thread.sleep(3000);
         elementClick(addToCartButtons.get(0));
-//        elementClick(addToCartButtons.get(0));
         return TitleAtProductPage;
     }
 
@@ -53,9 +55,12 @@ public class ProductPage extends WebUtility {
     }
 
 
-    public String addSonyTv() {
+    public String addSonyTv() throws InterruptedException {
+
         String TitleAtProductPage = extractText(sonyTvTitleAtProductPage);
-        eleClick(addToCartSonyTv, 15);
+        waitExplicit(addToCartButtons.get(0) , 15);
+        Thread.sleep(2000);
+        eleClick(addToCartButtons.get(0), 15);
         return TitleAtProductPage;
     }
 

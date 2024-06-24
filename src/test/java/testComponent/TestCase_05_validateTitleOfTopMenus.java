@@ -20,7 +20,7 @@ public class TestCase_05_validateTitleOfTopMenus extends BaseClass {
 
 
     @Test(dataProvider = "getFromExcel", priority = 5)
-    public void tc_05_validateTitleOfTopMenus(String menuName, String expTitle) {
+    public void tc_05_validateTitleOfTopMenus(String menuName, String expTitle)  {
         LocationPage lp = new LocationPage();
         lp.deliveryAtUSA();
         HomePage hp = new HomePage();

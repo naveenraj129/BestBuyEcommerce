@@ -23,7 +23,9 @@ public class TestCase_10_checkoutPageFilling extends BaseClass {
         hp.searchProduct("keyboard");
         ProductPage pp = new ProductPage();
         pp.addKeyBoard();
+        Thread.sleep(3000);
         pp.ContinueShopButtton();
+        Thread.sleep(3000);
         hp.cartButton();
         CartPage cp = new CartPage();
         cp.goToCheckOutPage();

@@ -46,8 +46,6 @@ public class WebUtility extends GeneralUtility {
         element.click();
     }
 
-
-
     public static String getTitleOfMenus() {
         waitExplicitUntillTitle(driver.getTitle());
         return driver.getTitle();

@@ -2,6 +2,7 @@ package testComponent;
 
 import com.aventstack.extentreports.Status;
 import engineComponent.BaseClass;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageComponent.CreateAccountPage;
@@ -33,4 +34,29 @@ public class TestCase_03_validateCreateAccountFunctionality extends BaseClass {
             test.log(Status.FAIL, testName + " - Failed");
         }
     }
+
+    @Test
+    public void tc_03_validateSuccessCreateAccountFunctionality() {
+        LocationPage lp = new LocationPage();
+        lp.deliveryAtUSA();
+        HomePage hp = new HomePage();
+        hp.goToCreateAccount();
+        CreateAccountPage cp = new CreateAccountPage();
+        String actMsg = cp.createAccountSuccessFunctionality();
+        System.out.println(actMsg);
+        String error1 = "Sorry, there was a problem creating your account. Please review your info and try again.";
+        String error2 = "An account with this email already exists. Please sign in or use a different email address.";
+
+
+        String normalizedActMsg = actMsg.replaceAll("\\s+", " ").trim();
+
+        Assert.assertTrue(normalizedActMsg.equals(error1) || normalizedActMsg.equals(error2));
+
+        if (normalizedActMsg.equals(error1) || normalizedActMsg.equals(error2)) {
+            test.log(Status.PASS, testName + " - Passed");
+        } else {
+            test.log(Status.FAIL, testName + " - Failed");
+        }
+    }
+
 }

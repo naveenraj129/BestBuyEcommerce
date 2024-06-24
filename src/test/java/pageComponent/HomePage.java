@@ -17,21 +17,11 @@ public class HomePage extends WebUtility {
 
     @FindBy(xpath = "//a[text()='Yes, Best Buy Sells That']")
     WebElement bestBuySellsMenu;
-
-//    @FindBy(xpath = "//span[text()='More']")
-//    WebElement moreMenu;
-
     @FindBy(xpath = "//a[text()='My Best Buy Memberships']")
     WebElement bestBuyMembershipMenu;
-
     @FindBy(xpath = "//a[text()='Credit Cards']")
     WebElement creditCardsMenu;
 
-    @FindBy(xpath = "//a[text()='Gift Cards']")
-    WebElement giftCardsMenu;
-
-    @FindBy(xpath = "//a[text()='Gift Ideas']")
-    WebElement giftIdeasMenu;
 
     @FindBy(xpath = "//a[text()='Yardbird']")
     WebElement yardBirdMenu;
@@ -42,11 +32,9 @@ public class HomePage extends WebUtility {
     @FindBy(xpath = "//a[text()='Best Buy Business']")
     WebElement bestBuyBusinessMenu;
 
+
     @FindBy(xpath = "//a[text()='Shop with an Expert']")
     WebElement shopWithExpertMenu;
-
-
-
 
 
     @FindBy(xpath = "//span[text()='Account']")
@@ -87,8 +75,6 @@ public class HomePage extends WebUtility {
 
     @FindBy(xpath = "//span[text()='Cart']")
     WebElement cartButton;
-
-
 
 
     @FindBy(xpath = "//a[text()='Shipping, Delivery & Pickup']")
@@ -138,8 +124,8 @@ public class HomePage extends WebUtility {
     }
 
     public void cartButton() {
-        explicitWait(cartButton , 15);
-        waitExplicit(cartButton , 15);
+        explicitWait(cartButton, 15);
+        waitExplicit(cartButton, 15);
         jsClickOn(cartButton, 15);
     }
 
@@ -153,58 +139,43 @@ public class HomePage extends WebUtility {
     }
 
     public String topMenusValidation(String menuName) {
-        if (menuName.equalsIgnoreCase("Shop with an Expert")) {
-            elementClick(driver.findElement(By.xpath("//a[text()='" + menuName + "']")));
-            String actTitle = getTitleOfMenus();
-            return actTitle;
-        } else {
-            elementClick(driver.findElement(By.xpath("//a[text()='" + menuName + "']")));
-            String actTitle = getTitleOfMenus();
-            return actTitle;
-        }
-
+        jsClickOn(driver.findElement(By.xpath("//a[text()='" + menuName + "']")), 15);
+        String actTitle = getTitleOfMenus();
+        return actTitle;
     }
 
     public String bottomMenusValidation(String menuName) {
-        if (menuName.equalsIgnoreCase("Shipping, Delivery & Pickup")) {
-            elementClick(driver.findElement(By.xpath("//a[text()='" + menuName + "']")));
-            String actTitle = getTitleOfMenus();
-            return actTitle;
-        } else {
-            elementClick(driver.findElement(By.xpath("//a[text()='" + menuName + "']")));
-            String actTitle = getTitleOfMenus();
-            return actTitle;
-        }
-
+        jsClickOn(driver.findElement(By.xpath("//a[text()='" + menuName + "']")), 15);
+        String actTitle = getTitleOfMenus();
+        return actTitle;
     }
 
     public void searchProduct(String productName) {
         typeText(searchBox, productName);
-        elementClick(searchButton);
+        jsClickOn(searchButton, 15);
     }
 
     public void openMenu() {
 
-        eleClick(menuButton , 15);
+        jsClickOn(menuButton, 15);
     }
 
-    public void selectShopByDepartment(){
-        explicitWait(tvInMenu , 15);
-        eleClick(tvInMenu , 15);
-        eleClick(tvsByBrandInnerMenu1 , 15);
-        eleClick(sonyTvsInnerMenu2 , 15);
+    public void selectShopByDepartment() {
+        explicitWait(tvInMenu, 15);
+        jsClickOn(tvInMenu, 15);
+        jsClickOn(tvsByBrandInnerMenu1, 15);
+        jsClickOn(sonyTvsInnerMenu2, 15);
     }
 
-    public void selectByBrand(){
+    public void selectByBrand() {
 
-        eleClick(brandsInMenu , 15);
-        eleClick(LenovoInBrandsMenu , 15);
+        jsClickOn(brandsInMenu, 15);
+        jsClickOn(LenovoInBrandsMenu, 15);
 
     }
 
     public void goToCartPage() {
-
-        eleClick(cartButton , 15);
+        jsClickOn(cartButton, 15);
     }
 
 }

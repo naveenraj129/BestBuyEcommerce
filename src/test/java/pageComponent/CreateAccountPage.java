@@ -25,6 +25,12 @@ public class CreateAccountPage extends WebUtility {
     @FindBy(xpath = "//button[text() = 'Create an Account']")
     WebElement createAccount;
 
+    @FindBy(xpath = "//strong[text()='Sorry, there was a problem creating your account.']")
+    WebElement errorMessege;
+    @FindBy(xpath = "//div[@role='alertdialog']")
+    WebElement alert;
+
+
 
     public CreateAccountPage() {
 
@@ -40,7 +46,19 @@ public class CreateAccountPage extends WebUtility {
         typeText(rePassword, repass);
         typeText(Phone, mob);
         elementClick(createAccount);
-        String actMsg = driver.findElement(By.xpath( ""+ textXpath + "")).getText();
+        String actMsg = driver.findElement(By.xpath("" + textXpath + "")).getText();
+        return actMsg;
+    }
+
+    public String createAccountSuccessFunctionality() {
+        typeText(firstName, "Naveen");
+        typeText(lastName, "Raj");
+        typeText(Email, "naveenrajv129@gmail.com");
+        typeText(Password, "EVANaura@129");
+        typeText(rePassword, "EVANaura@129");
+        typeText(Phone, "8778335842");
+        elementClick(createAccount);
+        String actMsg = alert.getText();
         return actMsg;
     }
 }

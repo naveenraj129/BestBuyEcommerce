@@ -7,10 +7,8 @@ import utils.WebUtility;
 
 public class BaseClass extends WebUtility {
 
-
     @BeforeSuite
     public void startReport() {
-
         reportInit();
     }
 
@@ -20,17 +18,14 @@ public class BaseClass extends WebUtility {
         test.assignCategory(testCategory);
     }
 
-
     @BeforeMethod
-    public void beforeMethod() {
-        openBrowser();
-        openWebsite();
-
+    public void beforeMethod() throws Exception {
+        openBrowser(readProperty("browser"));
+        openWebsite( readProperty("url"));
     }
 
     @AfterMethod
     public void afterMethod() {
-
         closeBrowser();
     }
 

@@ -24,13 +24,13 @@ public class ProductPage extends WebUtility {
     @FindBy(xpath = "//p[text()='ThinkPad laptops']")
     WebElement thinkPadLaptopsAtLenovoProdPage;
 
-    @FindBy(xpath = "//a[contains(text(),'Lenovo - ThinkPad E14 Gen 5 14\" Touch-Screen Laptop - i5-1335U with 16GB Memory - 512GB SSD - Black')]")
+    @FindBy(xpath = "//a[contains(text(),'Lenovo - ThinkBook 16 G6 ABP (AMD) in 16\" Touch-screen Notebook - AMD Ryzen 7 with 16GB Memory - 512GB SSD - Gray')]")
     WebElement lenovoThinkPadTitleAtProductPage;
 
     @FindBy(xpath = "//button[@data-button-state='ADD_TO_CART']")
     WebElement addToCartLenovoThinkPad;
 
-    @FindBy(xpath = "//a[contains(text(),'Sony - 55\" Class X80K LED 4K UHD Smart Google TV')]")
+    @FindBy(xpath = "//h4[@class = 'sku-title']//a[text() = 'Sony - 75\" Class X85K LED 4K UHD Smart Google TV - (2023)']")
     WebElement sonyTvTitleAtProductPage;
 
     @FindBy(xpath = "//button[@data-button-state='ADD_TO_CART']")
@@ -41,25 +41,23 @@ public class ProductPage extends WebUtility {
         PageFactory.initElements(driver, this);
     }
 
-    public String addKeyBoard() throws Exception {
+    public String addKeyBoard() throws InterruptedException {
         String TitleAtProductPage = extractText(keyBoardTitleAtProductPage);
-        waitExplicit(addToCartButtons.get(0), 15);
+//        waitExplicit(addToCartButtons.get(0), 15);
         Thread.sleep(3000);
         elementClick(addToCartButtons.get(0));
         return TitleAtProductPage;
     }
 
-    public void ContinueShopButtton() {
+    public void continueShopButtton() {
         waitExplicit(continueShopButtton, 15);
         jsClickOn(continueShopButtton, 15);
     }
 
-
-    public String addSonyTv() throws InterruptedException {
-
+    public String addSonyTv() {
         String TitleAtProductPage = extractText(sonyTvTitleAtProductPage);
-        waitExplicit(addToCartButtons.get(0) , 15);
-        Thread.sleep(2000);
+        waitExplicit(addToCartButtons.get(0), 15);
+//        Thread.sleep(2000);
         eleClick(addToCartButtons.get(0), 15);
         return TitleAtProductPage;
     }
@@ -67,7 +65,7 @@ public class ProductPage extends WebUtility {
     public String addLenovoThinkPad() {
         eleClick(thinkPadLaptopsAtLenovoProdPage, 15);
         String TitleAtProdPage = extractText(lenovoThinkPadTitleAtProductPage);
-        jsClickOn(addToCartLenovoThinkPad, 15);
+        eleClick(addToCartButtons.get(0), 15);
         return TitleAtProdPage;
     }
 

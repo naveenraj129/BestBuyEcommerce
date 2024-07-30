@@ -88,23 +88,23 @@ public class HomePage extends WebUtility {
 
     @FindBy(xpath = "//a[text()='My Best Buy® Credit Card']")
     WebElement bbCreditCardMenu;
-    @FindBy(xpath = "//a[text()='Protection & Support Plans']")
-    WebElement protectionSupportPlans;
-    @FindBy(xpath = "//a[text()='Haul Away & Recycling']")
-    WebElement haulAwayRecyclingMenu;
-    @FindBy(xpath = "//a[text()='Developers']")
-    WebElement developersMenu;
-    @FindBy(xpath = "//a[text()='Best Buy Education']")
-    WebElement bbEducationMenu;
-
-    @FindBy(xpath = "//a[text()='Careers']")
-    WebElement careersMenu;
-    @FindBy(xpath = "//a[text()='Sustainability']")
-    WebElement sustainabilityMenu;
-    @FindBy(xpath = "//a[text()='Terms & Conditions']")
-    WebElement termsAndConditionsMenu;
-    @FindBy(xpath = "//a[text()='Privacy']")
-    WebElement privacyMenu;
+//    @FindBy(xpath = "//a[text()='Protection & Support Plans']")
+//    WebElement protectionSupportPlans;
+//    @FindBy(xpath = "//a[text()='Haul Away & Recycling']")
+//    WebElement haulAwayRecyclingMenu;
+//    @FindBy(xpath = "//a[text()='Developers']")
+//    WebElement developersMenu;
+//    @FindBy(xpath = "//a[text()='Best Buy Education']")
+//    WebElement bbEducationMenu;
+//
+//    @FindBy(xpath = "//a[text()='Careers']")
+//    WebElement careersMenu;
+//    @FindBy(xpath = "//a[text()='Sustainability']")
+//    WebElement sustainabilityMenu;
+//    @FindBy(xpath = "//a[text()='Terms & Conditions']")
+//    WebElement termsAndConditionsMenu;
+//    @FindBy(xpath = "//a[text()='Privacy']")
+//    WebElement privacyMenu;
 
 
     public HomePage() {
@@ -113,9 +113,8 @@ public class HomePage extends WebUtility {
     }
 
     public void goToCreateAccount() {
-        eleClick(account, 10);
-        eleClick(createAccount, 10);
-
+        jsClickOn(account, 10);
+        jsClickOn(createAccount, 10);
     }
 
     public void goToSignIn() {
@@ -156,8 +155,7 @@ public class HomePage extends WebUtility {
     }
 
     public void openMenu() {
-
-        jsClickOn(menuButton, 15);
+        elementClick(menuButton);
     }
 
     public void selectShopByDepartment() {

@@ -17,18 +17,17 @@ public class TestCase_01_navigatingToBestBuyWebsite extends BaseClass {
     }
 
     @Test(priority = 1)
-    public void tc_01_navigatingToBestBuyWebsite() throws InterruptedException {
+    public void tc_01_navigatingToBestBuyWebsite() {
         LocationPage lp = new LocationPage();
-        lp.deliveryAtUSA();
+        lp.selectDeliveryAtUSA();
         String actText = lp.getPageTitle();
-        System.out.println(actText);
         String expText = "Best Buy International: Select your Country - Best Buy";
-        softAssert(actText , expText);
+        softAssert(actText, expText);
 
-        if(actText.equals(expText)){
-            test.log(Status.PASS , testName + " - Passed");
-        }else{
-            test.log(Status.FAIL , testName + " - Failed");
+        if (actText.equals(expText)) {
+            test.log(Status.PASS, testName + " - Passed");
+        } else {
+            test.log(Status.FAIL, testName + " - Failed");
         }
     }
 

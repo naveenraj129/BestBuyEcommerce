@@ -16,16 +16,16 @@ public class CheckOutPage {
     WebElement passToSignInAtCheckOut;
 
     @FindBy(xpath = "//button[text()='Sign In']")
-    WebElement submitSigInAtCheckOut;
+    WebElement sigInButtonAtCheckOutPage;
 
     @FindBy(xpath = "//button[text()='Continue as Guest']")
-    WebElement continueAsGuest;
+    WebElement continueAsGuestButton;
 
     @FindBy(id = "user.emailAddress")
-    WebElement emailAtCheckOut;
+    WebElement emailInputElementAtCheckOutPage;
 
     @FindBy(id = "user.phone")
-    WebElement mobileNumAtCheckOut;
+    WebElement mobileNumInputElementAtCheckOutPage;
 
     @FindBy(xpath = "//input[@id='text-updates']")
     WebElement textUpdateCheckBox;
@@ -35,7 +35,6 @@ public class CheckOutPage {
 
     @FindBy(xpath = "//div[contains(@class,'error-spacing')]")
     WebElement errorText;
-
 
     @FindBy(xpath = "//input[@id='number']")
     WebElement debitCardNumber;
@@ -49,20 +48,21 @@ public class CheckOutPage {
     @FindBy(id = "cvv")
     WebElement cvv;
 
+    @FindBy(xpath = "//button[@id = 'changeFullfilmentButton']")
+    WebElement switchToShippingButton;
 
-    @FindBy(xpath = "//input[@aria-labelledby='first-name-help']")
+    @FindBy(xpath = "//input[@id='firstName']")
     WebElement firstName;
+
 
     @FindBy(xpath = "//input[@aria-labelledby='last-name-help']")
     WebElement lastName;
-
 
     @FindBy(xpath = "//input[@aria-controls='suggestionsMenuId']")
     WebElement address;
 
     @FindBy(xpath = "//input[@aria-labelledby='city-help']")
     WebElement city;
-
 
     @FindBy(xpath = "//select[@id='state']")
     WebElement state;
@@ -73,7 +73,6 @@ public class CheckOutPage {
     @FindBy(xpath = "//button[contains(@class , 'button-md new-address-form__button')]")
     WebElement applyButton;
 
-
     @FindBy(xpath = "//span[text()='Keep Address as Entered']")
     WebElement enteredAddress;
 
@@ -81,25 +80,25 @@ public class CheckOutPage {
     WebElement placeYourOrder;
 
     public CheckOutPage() {
-
         PageFactory.initElements(driver, this);
     }
 
-    public void contactInfoAtCheckOut() throws Exception {
-
-        typeText(emailAtCheckOut, "naveenrajv129@gmail.com");
-        typeText(mobileNumAtCheckOut, "9066543213");
+    public void contactInfoAtCheckOut() {
+        typeText(emailInputElementAtCheckOutPage, "naveenrajv129@gmail.com");
+        typeText(mobileNumInputElementAtCheckOutPage, "9066543213");
         eleClick(textUpdateCheckBox, 15);
-
-
+//        eleClick(continueToPayement, 15);
     }
 
     public void continueAsGuestButton() {
-        explicitWait(continueAsGuest, 15);
-        eleClick(continueAsGuest, 15);
+        explicitWait(continueAsGuestButton, 15);
+        eleClick(continueAsGuestButton, 15);
     }
 
     public String enterAddressOnCheckOut() throws InterruptedException {
+        eleClick(switchToShippingButton , 15);
+        Thread.sleep(2000);
+        jsClickOn(firstName , 10);
         typeText(firstName, "Naveen");
         typeText(lastName, "Raj");
         typeText(address, "N Calle 11");
@@ -107,13 +106,12 @@ public class CheckOutPage {
         elementClick(state);
         selectFromDropDown(state, "DC");
         typeText(postalCode, "00646");
-        Thread.sleep(2000);
+        explicitWait(applyButton, 15);
         jsClickOn(applyButton, 15);
         explicitWait(errorText, 25);
         return errorText.getText();
 
     }
-
 
     public void enterDetailsOnCheckOut() throws Exception {
         typeText(debitCardNumber, "12345678");
@@ -125,9 +123,9 @@ public class CheckOutPage {
     public void signInAtCheckOut() {
         typeText(emailToSignInAtCheckOut, "naveenrajv129@gmail.com");
         typeText(passToSignInAtCheckOut, "EVANaura@129");
-        eleClick(submitSigInAtCheckOut, 15);
-        typeText(emailAtCheckOut, "naveenrajv129@gmail.com");
-        typeText(mobileNumAtCheckOut, "8778335842");
+        eleClick(sigInButtonAtCheckOutPage, 15);
+        typeText(emailInputElementAtCheckOutPage, "naveenrajv129@gmail.com");
+        typeText(mobileNumInputElementAtCheckOutPage, "8778335842");
         eleClick(textUpdateCheckBox, 15);
 
     }

@@ -18,11 +18,9 @@ public class TestCase_02_validateLink extends BaseClass {
 
     @Test(priority = 2)
     public void tc_02_validateLink() throws Exception {
-
         LocationPage lp = new LocationPage();
-        lp.deliveryAtUSA();
+        lp.selectDeliveryAtUSA();
         boolean actResponseCode = lp.urlResponseCode();
-        System.out.println(actResponseCode);
         boolean expResponseCode = false;
         Assert.assertEquals(actResponseCode, expResponseCode);
 

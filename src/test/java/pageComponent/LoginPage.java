@@ -19,19 +19,17 @@ public class LoginPage {
     @FindBy(xpath = "//a[text() = 'Return to previous page']")
     WebElement returnPreviousPage;
 
-
     public LoginPage() {
-
         PageFactory.initElements(driver, this);
     }
 
     public String validateSignInPage(String email, String password, String textXpath) throws InterruptedException {
-
-        typeText(emailId , email);
-        typeText(Password , password);
-        eleClick(loginButton , 15);
-       String actmsg = driver.findElement(By.xpath(""+textXpath+"")).getText();
-       return actmsg;
+        typeText(emailId, email);
+        typeText(Password, password);
+        eleClick(loginButton, 15);
+        Thread.sleep(3000);
+        String actmsg = driver.findElement(By.xpath("" + textXpath + "")).getText();
+        return actmsg;
     }
 
 }

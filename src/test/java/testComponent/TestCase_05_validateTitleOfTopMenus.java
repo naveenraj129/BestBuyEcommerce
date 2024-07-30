@@ -2,7 +2,6 @@ package testComponent;
 
 import com.aventstack.extentreports.Status;
 import engineComponent.BaseClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageComponent.HomePage;
@@ -20,9 +19,9 @@ public class TestCase_05_validateTitleOfTopMenus extends BaseClass {
 
 
     @Test(dataProvider = "getFromExcel", priority = 5)
-    public void tc_05_validateTitleOfTopMenus(String menuName, String expTitle)  {
+    public void tc_05_validateTitleOfTopMenus(String menuName, String expTitle) {
         LocationPage lp = new LocationPage();
-        lp.deliveryAtUSA();
+        lp.selectDeliveryAtUSA();
         HomePage hp = new HomePage();
         String actTitle = hp.topMenusValidation(menuName);
         softAssert(actTitle, expTitle);

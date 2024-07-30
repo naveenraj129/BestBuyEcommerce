@@ -1,48 +1,67 @@
 package utils;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 public class WebUtility extends GeneralUtility {
 
     public static WebDriver driver;
 
-    public static void openBrowser() {
+    public static String readProperty(String key) throws Exception {
+        String projectPath = System.getProperty("user.dir");
+        File file = new File(projectPath + "/BestBuyApplication.properties");
+        FileInputStream fileInput = new FileInputStream(file);
+        Properties prop = new Properties();
+        prop.load(fileInput);
+        return prop.get(key).toString();
+    }
 
-        driver = new FirefoxDriver();
+    public static void openBrowser(String browser) {
+        if (browser.equalsIgnoreCase("chrome")) {
+            ChromeOptions options = new ChromeOptions();
+//			options.addArguments("--headless");
+            driver = new ChromeDriver(options);
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            FirefoxOptions options=new FirefoxOptions();
+//            options.addArguments("--headless");
+            driver = new FirefoxDriver(options);
+        } else if (browser.equalsIgnoreCase("edge")) {
+            driver = new EdgeDriver();
+        } else {
+            System.out.println("Opening Chrome browser as Default browser");
+            driver = new ChromeDriver();
+        }
         driver.manage().window().maximize();
-       waitImplicit();
-
+        waitImplicit();
     }
 
-    public static void openWebsite() {
-
-        driver.get("https://www.bestbuy.com/");
+    public static void openWebsite(String url) {
+        driver.get(url);
     }
-
 
     public static void typeText(WebElement element, String value) {
-
         element.sendKeys(value);
-
     }
-
 
     public static void selectFromDropDown(WebElement element, String visibleText) {
         Select select = new Select(element);
         select.selectByVisibleText(visibleText);
     }
 
-
     public static void elementClick(WebElement element) {
-
         element.click();
     }
 
@@ -86,17 +105,27 @@ public class WebUtility extends GeneralUtility {
         wait.until(ExpectedConditions.elementToBeClickable(ele));
     }
 
-
     public static String extractText(WebElement element) {
-
         return element.getText();
     }
 
-
     public static void closeBrowser() {
-
         driver.quit();
+    }
 
+    public void SurveyWindow() throws IOException {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+            WebElement surveyWindow = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("survey-window")));
+            // If survey window is found, close it
+            if (surveyWindow.isDisplayed()) {
+                surveyWindow.findElement(By.cssSelector("button.close")).click();  // Adjust the selector to the actual close button
+                System.out.println("Survey window closed.");
+            }
+        } catch (NoSuchElementException e) {
+            // Survey window not found, continue with the test
+            System.out.println("Survey window not present.");
+        }
     }
 
 }

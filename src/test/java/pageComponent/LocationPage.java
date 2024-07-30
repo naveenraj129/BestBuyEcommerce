@@ -17,15 +17,11 @@ public class LocationPage {
     String title = driver.getTitle();
 
     public LocationPage() {
-
         PageFactory.initElements(driver, this);
-
     }
 
-    public void deliveryAtUSA() {
-
+    public void selectDeliveryAtUSA() {
         eleClick(countryUSA, 15);
-
     }
 
     public void deliveryAtCanada() {
@@ -34,7 +30,7 @@ public class LocationPage {
 
     }
 
-    public String getPageTitle() throws InterruptedException {
+    public String getPageTitle() {
         return title;
     }
 

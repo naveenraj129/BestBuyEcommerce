@@ -1,13 +1,13 @@
 package testComponent;
 
+import com.aventstack.extentreports.Status;
 import engineComponent.BaseClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 import pageComponent.CartPage;
 import pageComponent.HomePage;
 import pageComponent.LocationPage;
 import pageComponent.ProductPage;
-import com.aventstack.extentreports.Status;
-import org.testng.annotations.Test;
 
 public class TestCase_09_selectAddItemByMenuBrand extends BaseClass {
     @BeforeTest
@@ -19,9 +19,9 @@ public class TestCase_09_selectAddItemByMenuBrand extends BaseClass {
     }
 
     @Test
-    public void tc_09_selectAddItemByMenuBrand() throws Exception {
+    public void tc_09_selectAddItemByMenuBrand() {
         LocationPage lp = new LocationPage();
-        lp.deliveryAtUSA();
+        lp.selectDeliveryAtUSA();
         HomePage hp = new HomePage();
         hp.openMenu();
         hp.selectByBrand();
@@ -29,7 +29,7 @@ public class TestCase_09_selectAddItemByMenuBrand extends BaseClass {
         String TitleAtProductPage = pp.addLenovoThinkPad();
         CartPage cp = new CartPage();
         String TitleAtCartPage = cp.validateLenovoThinkPadInCart();
-        softAssert(TitleAtProductPage , TitleAtCartPage);
+        softAssert(TitleAtProductPage, TitleAtCartPage);
         if (TitleAtProductPage.equals(TitleAtCartPage)) {
             test.log(Status.PASS, testName + " - Passed");
         } else {

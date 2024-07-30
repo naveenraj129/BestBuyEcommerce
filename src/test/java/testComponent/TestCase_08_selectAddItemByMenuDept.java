@@ -1,13 +1,13 @@
 package testComponent;
 
+import com.aventstack.extentreports.Status;
 import engineComponent.BaseClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 import pageComponent.CartPage;
 import pageComponent.HomePage;
 import pageComponent.LocationPage;
 import pageComponent.ProductPage;
-import com.aventstack.extentreports.Status;
-import org.testng.annotations.Test;
 
 public class TestCase_08_selectAddItemByMenuDept extends BaseClass {
 
@@ -19,20 +19,19 @@ public class TestCase_08_selectAddItemByMenuDept extends BaseClass {
         testDescription = "Search a Item by Department in Menu and add it in cart";
         testCategory = "Regression";
     }
+
     @Test
-    public void tc_08_selectAddItemByMenuDept() throws Exception {
+    public void tc_08_selectAddItemByMenuDept() {
         LocationPage lp = new LocationPage();
-        lp.deliveryAtUSA();
+        lp.selectDeliveryAtUSA();
         HomePage hp = new HomePage();
         hp.openMenu();
-       hp.selectShopByDepartment();
+        hp.selectShopByDepartment();
         ProductPage pp = new ProductPage();
         String TitleAtProductPage = pp.addSonyTv();
-        System.out.println(TitleAtProductPage);
         CartPage cp = new CartPage();
         String TitleAtCartPage = cp.validateSonyTvInCart();
-        System.out.println(TitleAtCartPage);
-        softAssert(TitleAtProductPage , TitleAtCartPage);
+        softAssert(TitleAtProductPage, TitleAtCartPage);
         if (TitleAtProductPage.equals(TitleAtCartPage)) {
             test.log(Status.PASS, testName + " - Passed");
         } else {

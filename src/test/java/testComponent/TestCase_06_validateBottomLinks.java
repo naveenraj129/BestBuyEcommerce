@@ -1,11 +1,11 @@
 package testComponent;
 
-import engineComponent.BaseClass;
-import pageComponent.HomePage;
-import pageComponent.LocationPage;
 import com.aventstack.extentreports.Status;
+import engineComponent.BaseClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import pageComponent.HomePage;
+import pageComponent.LocationPage;
 
 public class TestCase_06_validateBottomLinks extends BaseClass {
 
@@ -16,11 +16,12 @@ public class TestCase_06_validateBottomLinks extends BaseClass {
         testCategory = "Regression";
         sheetName = "BottomMenuData";
     }
-    @Test(dataProvider="getFromExcel")
-    public void tc_06_validateLinkInBottomOfHomePage(String menuName,String expTitle) throws Exception {
-        LocationPage lp=new LocationPage();
-        lp.deliveryAtUSA();
-        HomePage hp=new HomePage();
+
+    @Test(dataProvider = "getFromExcel")
+    public void tc_06_validateLinkInBottomOfHomePage(String menuName, String expTitle) {
+        LocationPage lp = new LocationPage();
+        lp.selectDeliveryAtUSA();
+        HomePage hp = new HomePage();
         String actTitle = hp.bottomMenusValidation(menuName);
         softAssert(actTitle, expTitle);
         if (actTitle.equals(expTitle)) {

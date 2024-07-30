@@ -56,9 +56,9 @@ public class WebUtility extends GeneralUtility {
         element.sendKeys(value);
     }
 
-    public static void selectFromDropDown(WebElement element, String visibleText) {
+    public static void selectFromDropDown(WebElement element, String visibletext) {
         Select select = new Select(element);
-        select.selectByVisibleText(visibleText);
+        select.selectByVisibleText(visibletext);
     }
 
     public static void elementClick(WebElement element) {

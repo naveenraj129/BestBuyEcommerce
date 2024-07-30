@@ -43,21 +43,21 @@ public class ProductPage extends WebUtility {
 
     public String addKeyBoard() throws InterruptedException {
         String TitleAtProductPage = extractText(keyBoardTitleAtProductPage);
-//        waitExplicit(addToCartButtons.get(0), 15);
         Thread.sleep(3000);
         elementClick(addToCartButtons.get(0));
         return TitleAtProductPage;
     }
 
-    public void continueShopButtton() {
-        waitExplicit(continueShopButtton, 15);
+    public void continueShopButtton() throws InterruptedException {
+        explicitWait(continueShopButtton, 10);
+        Thread.sleep(2000);
         jsClickOn(continueShopButtton, 15);
     }
 
-    public String addSonyTv() {
+    public String addSonyTv() throws InterruptedException {
         String TitleAtProductPage = extractText(sonyTvTitleAtProductPage);
         waitExplicit(addToCartButtons.get(0), 15);
-//        Thread.sleep(2000);
+        Thread.sleep(2000);
         eleClick(addToCartButtons.get(0), 15);
         return TitleAtProductPage;
     }

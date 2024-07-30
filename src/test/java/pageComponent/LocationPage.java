@@ -26,7 +26,7 @@ public class LocationPage {
 
     public void deliveryAtCanada() {
 
-        eleClick(countryCanada, 15);
+        elementClick(countryCanada);
 
     }
 

@@ -29,8 +29,8 @@ public class TestCase_10_checkoutPageFilling extends BaseClass {
         cp.goToCheckOutPage();
         CheckOutPage cop = new CheckOutPage();
         cop.continueAsGuestButton();
-        String actText = cop.enterAddressOnCheckOut();
         cop.contactInfoAtCheckOut();
+        String actText = cop.enterAddressOnCheckOut();
         String expText = "Request failed because of network connection";
 
         softAssert(actText, expText);

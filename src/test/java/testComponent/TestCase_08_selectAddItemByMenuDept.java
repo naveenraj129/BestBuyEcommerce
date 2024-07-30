@@ -21,7 +21,7 @@ public class TestCase_08_selectAddItemByMenuDept extends BaseClass {
     }
 
     @Test
-    public void tc_08_selectAddItemByMenuDept() {
+    public void tc_08_selectAddItemByMenuDept() throws InterruptedException {
         LocationPage lp = new LocationPage();
         lp.selectDeliveryAtUSA();
         HomePage hp = new HomePage();

@@ -35,9 +35,9 @@ public class CartPage extends WebUtility {
         return extractText(lenovoThinkPadAddedInCart);
     }
 
-    public void goToCheckOutPage() {
-        waitExplicit(checkOutButton, 15);
-//        Thread.sleep(5000);
+    public void goToCheckOutPage() throws InterruptedException {
+        explicitWait(checkOutButton, 15);
+        Thread.sleep(5000);
         elementClick(checkOutButton);
     }
 

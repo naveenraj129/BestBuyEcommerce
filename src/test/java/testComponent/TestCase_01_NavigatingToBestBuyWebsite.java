@@ -2,32 +2,33 @@ package testComponent;
 
 import com.aventstack.extentreports.Status;
 import engineComponent.BaseClass;
-import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageComponent.LocationPage;
 
-public class TestCase_02_validateLink extends BaseClass {
+public class TestCase_01_NavigatingToBestBuyWebsite extends BaseClass {
 
     @BeforeTest
     public void setup() {
-        testName = "tc_02_validateLink";
-        testDescription = "Given URL Link is broken or not";
+        testName = "tc_01_navigatingToBestBuyWebsite";
+        testDescription = "Navigating to the Best Buy e-commerce website";
         testCategory = "Regression";
+
     }
 
-    @Test(priority = 2)
-    public void tc_02_validateLink() throws Exception {
+    @Test(priority = 1)
+    public void tc_01_navigatingToBestBuyWebsite() {
         LocationPage lp = new LocationPage();
         lp.selectDeliveryAtUSA();
-        boolean actResponseCode = lp.urlResponseCode();
-        boolean expResponseCode = false;
-        Assert.assertEquals(actResponseCode, expResponseCode);
+        String actText = lp.getPageTitle();
+        String expText = "Best Buy International: Select your Country - Best Buy";
+        softAssert(actText, expText);
 
-        if (actResponseCode == expResponseCode) {
+        if (actText.equals(expText)) {
             test.log(Status.PASS, testName + " - Passed");
         } else {
             test.log(Status.FAIL, testName + " - Failed");
         }
     }
+
 }

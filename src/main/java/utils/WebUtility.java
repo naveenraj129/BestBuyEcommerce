@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -32,11 +31,9 @@ public class WebUtility extends GeneralUtility {
     public static void openBrowser(String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
-//			options.addArguments("--headless");
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("firefox")) {
             FirefoxOptions options=new FirefoxOptions();
-//            options.addArguments("--headless");
             driver = new FirefoxDriver(options);
         } else if (browser.equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();
@@ -79,15 +76,9 @@ public class WebUtility extends GeneralUtility {
         wait.until(ExpectedConditions.titleIs(titleToWait));
     }
 
-
     public static void eleClick(WebElement ele, int time) {
         explicitWait(ele, time);
         ele.click();
-    }
-
-    public static void jsScrollUntillElement(WebElement element, int time) {
-        explicitWait(element, time);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     public static void jsClickOn(WebElement element, int time) {
@@ -113,19 +104,5 @@ public class WebUtility extends GeneralUtility {
         driver.quit();
     }
 
-    public void SurveyWindow() throws IOException {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-            WebElement surveyWindow = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("survey-window")));
-            // If survey window is found, close it
-            if (surveyWindow.isDisplayed()) {
-                surveyWindow.findElement(By.cssSelector("button.close")).click();  // Adjust the selector to the actual close button
-                System.out.println("Survey window closed.");
-            }
-        } catch (NoSuchElementException e) {
-            // Survey window not found, continue with the test
-            System.out.println("Survey window not present.");
-        }
-    }
 
 }

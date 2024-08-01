@@ -3,52 +3,54 @@
 <suite name="Suite">
     <test name="TitleValidateTest">
         <classes>
-            <class name="testComponent.TestCase_01_navigatingToBestBuyWebsite"/>
+            <class name="testComponent.TestCase_01_NavigatingToBestBuyWebsite"/>
         </classes>
     </test>
     <test name="LinkValidateTest">
         <classes>
-            <class name="testComponent.TestCase_02_validateLink"/>
+            <class name="testComponent.TestCase_02_ValidateLink"/>
         </classes>
     </test>
     <test name="CreateAccountTest">
         <classes>
-            <class name="testComponent.TestCase_03_validateCreateAccountFunctionality"/>
+            <class name="testComponent.TestCase_03_ValidateCreateAccountFunctionality"/>
         </classes>
     </test>
+
     <test name="SignInTest">
         <classes>
-            <class name="testComponent.Testcase_04_validateSignInFunctionality"/>
+            <class name="testComponent.Testcase_04_ValidateSignInFunctionality"/>
         </classes>
     </test>
-    <test name="ValidateTopMenuTitleTest">
+
+    <test name= "ValidateTitleOfTopMenus">
         <classes>
-            <class name="testComponent.TestCase_05_validateTitleOfTopMenus"/>
+            <class name="testComponent.TestCase_05_ValidateTitleOfTopMenus"/>
         </classes>
     </test>
     <test name="ValidateBottomMenuTitleTest">
         <classes>
-            <class name="testComponent.TestCase_06_validateBottomLinks"/>
+            <class name="testComponent.TestCase_06_ValidateBottomLinks"/>
         </classes>
     </test>
     <test name="SearchAddItemTest">
         <classes>
-            <class name="testComponent.TestCase_07_searchAddItemInCart"/>
+            <class name="testComponent.TestCase_07_SearchAddItemInCart"/>
         </classes>
     </test>
     <test name="AddItemByDeptTest">
         <classes>
-            <class name="testComponent.TestCase_08_selectAddItemByMenuDept"/>
+            <class name="testComponent.TestCase_08_SelectAddItemByMenuDept"/>
         </classes>
     </test>
     <test name="AddItemByBrandTest">
         <classes>
-            <class name="testComponent.TestCase_09_selectAddItemByMenuBrand"/>
+            <class name="testComponent.TestCase_09_SelectAddItemByMenuBrand"/>
         </classes>
     </test>
     <test name="CheckoutPageTest">
         <classes>
-            <class name="testComponent.TestCase_10_checkoutPageFilling"/>
+            <class name="testComponent.TestCase_10_CheckoutPageFilling"/>
         </classes>
     </test>
 

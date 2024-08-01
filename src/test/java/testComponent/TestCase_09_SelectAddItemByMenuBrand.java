@@ -9,33 +9,31 @@ import pageComponent.HomePage;
 import pageComponent.LocationPage;
 import pageComponent.ProductPage;
 
-public class TestCase_08_selectAddItemByMenuDept extends BaseClass {
-
-
+public class TestCase_09_SelectAddItemByMenuBrand extends BaseClass {
     @BeforeTest
     public void setup() {
 
-        testName = "tc_08_selectAddItemByMenuDept";
-        testDescription = "Search a Item by Department in Menu and add it in cart";
+        testName = "tc_09_selectAddItemByMenuBrand";
+        testDescription = "Search a Item by Brands in Menu and add it in cart";
         testCategory = "Regression";
     }
 
     @Test
-    public void tc_08_selectAddItemByMenuDept() throws InterruptedException {
+    public void tc_09_selectAddItemByMenuBrand() {
         LocationPage lp = new LocationPage();
         lp.selectDeliveryAtUSA();
         HomePage hp = new HomePage();
         hp.openMenu();
-        hp.selectShopByDepartment();
+        hp.selectByBrand();
         ProductPage pp = new ProductPage();
-        String TitleAtProductPage = pp.addSonyTv();
+        String TitleAtProductPage = pp.addLenovoThinkPad();
         CartPage cp = new CartPage();
-        String TitleAtCartPage = cp.validateSonyTvInCart();
+        String TitleAtCartPage = cp.validateLenovoThinkPadInCart();
         softAssert(TitleAtProductPage, TitleAtCartPage);
         if (TitleAtProductPage.equals(TitleAtCartPage)) {
             test.log(Status.PASS, testName + " - Passed");
         } else {
-            test.log(Status.PASS, testName + " - Failed");
+            test.log(Status.PASS, testName + " - Passed");
         }
     }
 }

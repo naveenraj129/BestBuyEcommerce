@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageComponent.*;
 
-public class TestCase_10_checkoutPageFilling extends BaseClass {
+public class TestCase_10_CheckoutPageFilling extends BaseClass {
 
     @BeforeTest
     public void setup() {

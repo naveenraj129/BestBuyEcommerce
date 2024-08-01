@@ -9,7 +9,7 @@ import pageComponent.CreateAccountPage;
 import pageComponent.HomePage;
 import pageComponent.LocationPage;
 
-public class TestCase_03_validateCreateAccountFunctionality extends BaseClass {
+public class TestCase_03_ValidateCreateAccountFunctionality extends BaseClass {
     @BeforeTest
     public void setup() {
         testName = "tc_03_validateCreateAccountFunctionality";

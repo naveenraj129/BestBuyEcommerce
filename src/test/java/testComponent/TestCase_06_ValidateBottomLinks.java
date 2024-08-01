@@ -7,23 +7,22 @@ import org.testng.annotations.Test;
 import pageComponent.HomePage;
 import pageComponent.LocationPage;
 
-public class TestCase_05_validateTitleOfTopMenus extends BaseClass {
+public class TestCase_06_ValidateBottomLinks extends BaseClass {
 
     @BeforeTest
     public void setup() {
-        testName = "tc_05_validateTitleOfTopMenus";
-        testDescription = "Check the different menu titles";
+        testName = "tc_06_validateLinkInBottomOfHomePage";
+        testDescription = "Validating Link in Homepage Bottom";
         testCategory = "Regression";
-        sheetName = "TopMenuData";
+        sheetName = "BottomMenuData";
     }
 
-
-    @Test(dataProvider = "getFromExcel", priority = 5)
-    public void tc_05_validateTitleOfTopMenus(String menuName, String expTitle) {
+    @Test(dataProvider = "getFromExcel")
+    public void tc_06_validateLinkInBottomOfHomePage(String menuName, String expTitle) {
         LocationPage lp = new LocationPage();
         lp.selectDeliveryAtUSA();
         HomePage hp = new HomePage();
-        String actTitle = hp.topMenusValidation(menuName);
+        String actTitle = hp.bottomMenusValidation(menuName);
         softAssert(actTitle, expTitle);
         if (actTitle.equals(expTitle)) {
             test.log(Status.PASS, testName + " - Passed");
@@ -31,5 +30,6 @@ public class TestCase_05_validateTitleOfTopMenus extends BaseClass {
             test.log(Status.FAIL, testName + " - Failed");
         }
     }
-}
 
+
+}

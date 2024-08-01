@@ -8,7 +8,7 @@ import pageComponent.HomePage;
 import pageComponent.LocationPage;
 import pageComponent.LoginPage;
 
-public class Testcase_04_validateSignInFunctionality extends BaseClass {
+public class Testcase_04_ValidateSignInFunctionality extends BaseClass {
 
     @BeforeTest
     public void setup() {

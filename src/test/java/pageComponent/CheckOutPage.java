@@ -98,13 +98,13 @@ public class CheckOutPage {
     public String enterAddressOnCheckOut() throws InterruptedException {
 //        eleClick(switchToShippingButton , 15);
         Thread.sleep(2000);
-        jsClickOn(firstName , 10);
+        jsClickOn(firstName, 10);
         typeText(firstName, "Naveen");
         typeText(lastName, "Raj");
         typeText(address, "N Calle 11");
         typeText(city, "silverspring");
-       eleClick(state , 10);
-       Thread.sleep(2000);
+        eleClick(state, 10);
+        Thread.sleep(2000);
         selectFromDropDown(state, "DC");
         typeText(postalCode, "00646");
         explicitWait(applyButton, 15);

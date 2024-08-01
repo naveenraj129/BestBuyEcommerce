@@ -9,7 +9,7 @@ import pageComponent.HomePage;
 import pageComponent.LocationPage;
 import pageComponent.ProductPage;
 
-public class TestCase_07_searchAddItemInCart extends BaseClass {
+public class TestCase_07_SearchAddItemInCart extends BaseClass {
 
     @BeforeTest
     public void setup() {

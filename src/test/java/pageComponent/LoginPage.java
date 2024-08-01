@@ -16,8 +16,6 @@ public class LoginPage {
     @FindBy(xpath = "//button[text()='Sign In']")
     WebElement loginButton;
 
-    @FindBy(xpath = "//a[text() = 'Return to previous page']")
-    WebElement returnPreviousPage;
 
     public LoginPage() {
         PageFactory.initElements(driver, this);

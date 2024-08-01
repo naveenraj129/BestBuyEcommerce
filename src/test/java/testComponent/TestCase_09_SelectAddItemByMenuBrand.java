@@ -18,7 +18,7 @@ public class TestCase_09_SelectAddItemByMenuBrand extends BaseClass {
         testCategory = "Regression";
     }
 
-    @Test
+    @Test(priority = 9)
     public void tc_09_selectAddItemByMenuBrand() {
         LocationPage lp = new LocationPage();
         lp.selectDeliveryAtUSA();

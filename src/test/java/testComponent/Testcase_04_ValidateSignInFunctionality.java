@@ -12,14 +12,14 @@ public class Testcase_04_ValidateSignInFunctionality extends BaseClass {
 
     @BeforeTest
     public void setup() {
-        testName = "tc_04_SignInFunctionality";
+        testName = "tc_04_validateSignInFunctionality";
         testDescription = "Sign-In Functionality";
         testCategory = "Regression";
         sheetName = "SignInTestData";
     }
 
     @Test(dataProvider = "getFromExcel", priority = 4)
-    public void tc_04_SignInFunctionality(String email, String password, String xpath, String expMsg) throws Exception {
+    public void tc_04_validateSignInFunctionality(String email, String password, String xpath, String expMsg) throws Exception {
         LocationPage lp = new LocationPage();
         lp.selectDeliveryAtUSA();
         HomePage hp = new HomePage();

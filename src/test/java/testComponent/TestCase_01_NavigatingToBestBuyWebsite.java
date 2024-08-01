@@ -23,7 +23,6 @@ public class TestCase_01_NavigatingToBestBuyWebsite extends BaseClass {
         String actText = lp.getPageTitle();
         String expText = "Best Buy International: Select your Country - Best Buy";
         softAssert(actText, expText);
-
         if (actText.equals(expText)) {
             test.log(Status.PASS, testName + " - Passed");
         } else {

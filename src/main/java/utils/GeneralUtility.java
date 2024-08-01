@@ -2,6 +2,7 @@ package utils;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -11,6 +12,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 
 
 public class GeneralUtility {
@@ -38,7 +40,7 @@ public class GeneralUtility {
     public static boolean isLinkBroken() throws IOException {
         URL url = new URL(urlToCheck);
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-//        httpURLConnection.setRequestMethod("HEADLESS");
+//      httpURLConnection.setRequestMethod("HEADLESS");
         httpURLConnection.connect();
         int responseCode = httpURLConnection.getResponseCode();
         return (responseCode >= 400);
@@ -61,6 +63,5 @@ public class GeneralUtility {
         excelFile.close();
         return data;
     }
-
 
 }

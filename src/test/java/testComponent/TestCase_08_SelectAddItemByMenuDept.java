@@ -20,7 +20,7 @@ public class TestCase_08_SelectAddItemByMenuDept extends BaseClass {
         testCategory = "Regression";
     }
 
-    @Test
+    @Test(priority = 8)
     public void tc_08_selectAddItemByMenuDept() throws InterruptedException {
         LocationPage lp = new LocationPage();
         lp.selectDeliveryAtUSA();

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pageComponent.HomePage;
 import pageComponent.LocationPage;
 
-public class TestCase_06_ValidateBottomLinks extends BaseClass {
+public class TestCase_06_ValidateHomePageBottomLinks extends BaseClass {
 
     @BeforeTest
     public void setup() {
@@ -17,7 +17,7 @@ public class TestCase_06_ValidateBottomLinks extends BaseClass {
         sheetName = "BottomMenuData";
     }
 
-    @Test(dataProvider = "getFromExcel")
+    @Test(dataProvider = "getFromExcel" , priority = 6)
     public void tc_06_validateLinkInBottomOfHomePage(String menuName, String expTitle) {
         LocationPage lp = new LocationPage();
         lp.selectDeliveryAtUSA();

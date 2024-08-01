@@ -9,42 +9,19 @@ import utils.WebUtility;
 
 public class HomePage extends WebUtility {
 
-    @FindBy(xpath = "//a[text()='Top Deals']")
-    WebElement topDealsMenu;
-
-    @FindBy(xpath = "//a[text()='Deal of the Day']")
-    WebElement dealsOfTheDayMenu;
-
-    @FindBy(xpath = "//a[text()='Yes, Best Buy Sells That']")
-    WebElement bestBuySellsMenu;
-    @FindBy(xpath = "//a[text()='My Best Buy Memberships']")
-    WebElement bestBuyMembershipMenu;
-    @FindBy(xpath = "//a[text()='Credit Cards']")
-    WebElement creditCardsMenu;
-
-
-    @FindBy(xpath = "//a[text()='Yardbird']")
-    WebElement yardBirdMenu;
-
-    @FindBy(xpath = "//a[text()='Best Buy Outlet']")
-    WebElement bestBuyOutletMenu;
-
-    @FindBy(xpath = "//a[text()='Best Buy Business']")
-    WebElement bestBuyBusinessMenu;
-
-
-    @FindBy(xpath = "//a[text()='Shop with an Expert']")
-    WebElement shopWithExpertMenu;
-
 
     @FindBy(xpath = "//span[text()='Account']")
     WebElement account;
+
     @FindBy(xpath = "//a[text()='Create Account']")
     WebElement createAccount;
+
     @FindBy(xpath = "//a[text()='Sign In']")
     WebElement signInButton;
+
     @FindBy(xpath = "//button[text() = 'Sign out']")
     WebElement signOutButton;
+
     @FindBy(xpath = "//span[text() = 'Hi, Naveen']")
     WebElement signInSuccessful;
 
@@ -77,40 +54,11 @@ public class HomePage extends WebUtility {
     WebElement cartButton;
 
 
-    @FindBy(xpath = "//a[text()='Shipping, Delivery & Pickup']")
-    WebElement deliveryPickUpButton;
-    @FindBy(xpath = "//a[text()='Returns & Exchanges']")
-    WebElement returnsExchangesMenu;
-    @FindBy(xpath = "//a[text()='Price Match Guarantee']")
-    WebElement priceMatchGaurantee;
-    @FindBy(xpath = "//a[text()='Trade-In Program']")
-    WebElement tradeInProgramMenu;
-
-    @FindBy(xpath = "//a[text()='My Best Buy® Credit Card']")
-    WebElement bbCreditCardMenu;
-    @FindBy(xpath = "//a[text()='Protection & Support Plans']")
-    WebElement protectionSupportPlans;
-    @FindBy(xpath = "//a[text()='Haul Away & Recycling']")
-    WebElement haulAwayRecyclingMenu;
-    @FindBy(xpath = "//a[text()='Developers']")
-    WebElement developersMenu;
-    @FindBy(xpath = "//a[text()='Best Buy Education']")
-    WebElement bbEducationMenu;
-
-    @FindBy(xpath = "//a[text()='Careers']")
-    WebElement careersMenu;
-    @FindBy(xpath = "//a[text()='Sustainability']")
-    WebElement sustainabilityMenu;
-    @FindBy(xpath = "//a[text()='Terms & Conditions']")
-    WebElement termsAndConditionsMenu;
-    @FindBy(xpath = "//a[text()='Privacy']")
-    WebElement privacyMenu;
-
-
     public HomePage() {
 
         PageFactory.initElements(driver, this);
     }
+
 
     public void goToCreateAccount() {
         jsClickOn(account, 10);
@@ -129,11 +77,10 @@ public class HomePage extends WebUtility {
     }
 
     public void signOut() {
-
         eleClick(signOutButton, 15);
     }
 
-    public String signIn() throws InterruptedException {
+    public String signIn() {
         return signInSuccessful.getText();
     }
 
@@ -159,17 +106,16 @@ public class HomePage extends WebUtility {
     }
 
     public void selectShopByDepartment() throws InterruptedException {
-        explicitWait(tvInMenu, 15);
-        Thread.sleep(3000);
-        jsClickOn(tvInMenu, 15);
-        jsClickOn(tvsByBrandInnerMenu1, 15);
-        jsClickOn(sonyTvsInnerMenu2, 15);
+        waitExplicit(tvInMenu, 20);
+        elementClick(tvInMenu);
+        elementClick(tvsByBrandInnerMenu1);
+        elementClick(sonyTvsInnerMenu2);
     }
 
     public void selectByBrand() {
-
+        waitExplicit(brandsInMenu, 20);
         jsClickOn(brandsInMenu, 15);
-        jsClickOn(LenovoInBrandsMenu, 15);
+        eleClick(LenovoInBrandsMenu, 15);
 
     }
 

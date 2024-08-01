@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+
     <test name="TitleValidateTest">
         <classes>
             <class name="testComponent.TestCase_01_NavigatingToBestBuyWebsite"/>
@@ -8,7 +9,7 @@
     </test>
     <test name="LinkValidateTest">
         <classes>
-            <class name="testComponent.TestCase_02_ValidateLink"/>
+            <class name="testComponent.TestCase_02_ValidateBestBuyWebsiteLink"/>
         </classes>
     </test>
     <test name="CreateAccountTest">
@@ -23,14 +24,14 @@
         </classes>
     </test>
 
-    <test name= "ValidateTitleOfTopMenus">
+    <test name="ValidateTitleOfTopMenus">
         <classes>
             <class name="testComponent.TestCase_05_ValidateTitleOfTopMenus"/>
         </classes>
     </test>
     <test name="ValidateBottomMenuTitleTest">
         <classes>
-            <class name="testComponent.TestCase_06_ValidateBottomLinks"/>
+            <class name="testComponent.TestCase_06_ValidateHomePageBottomLinks"/>
         </classes>
     </test>
     <test name="SearchAddItemTest">
@@ -53,6 +54,5 @@
             <class name="testComponent.TestCase_10_CheckoutPageFilling"/>
         </classes>
     </test>
-
 
 </suite>

@@ -21,13 +21,11 @@ public class LocationPage {
     }
 
     public void selectDeliveryAtUSA() {
-        eleClick(countryUSA, 15);
+        elementClick(countryUSA);
     }
 
     public void deliveryAtCanada() {
-
         elementClick(countryCanada);
-
     }
 
     public String getPageTitle() {

@@ -30,9 +30,6 @@ public class CheckOutPage {
     @FindBy(xpath = "//input[@id='text-updates']")
     WebElement textUpdateCheckBox;
 
-    @FindBy(xpath = "//span[text()='Continue to Payment Information']")
-    WebElement continueToPayement;
-
     @FindBy(xpath = "//div[contains(@class,'error-spacing')]")
     WebElement errorText;
 
@@ -73,13 +70,12 @@ public class CheckOutPage {
     @FindBy(xpath = "//button[contains(@class , 'button-md new-address-form__button')]")
     WebElement applyButton;
 
-    @FindBy(xpath = "//span[text()='Keep Address as Entered']")
-    WebElement enteredAddress;
+    @FindBy(xpath = "//span[text() = 'Continue to Payment Information']")
+    WebElement continueToPaymentInformationButton;
 
-    @FindBy(xpath = "//span[text()='Place Your Order']")
-    WebElement placeYourOrder;
 
     public CheckOutPage() {
+
         PageFactory.initElements(driver, this);
     }
 
@@ -87,7 +83,7 @@ public class CheckOutPage {
         typeText(emailInputElementAtCheckOutPage, "naveenrajv129@gmail.com");
         typeText(mobileNumInputElementAtCheckOutPage, "9066543213");
         eleClick(textUpdateCheckBox, 15);
-//        eleClick(continueToPayement, 15);
+//      elementClick(continueToPaymentInformationButton);
     }
 
     public void continueAsGuestButton() {
@@ -96,13 +92,14 @@ public class CheckOutPage {
     }
 
     public String enterAddressOnCheckOut() throws InterruptedException {
-//        eleClick(switchToShippingButton , 15);
-        Thread.sleep(2000);
-        jsClickOn(firstName, 10);
+       //if testing in chrome uncomment switchtoshippingbutton
+//        elementClick(switchToShippingButton);
+        Thread.sleep(3000);
+        elementClick(firstName);
         typeText(firstName, "Naveen");
         typeText(lastName, "Raj");
-        typeText(address, "N Calle 11");
-        typeText(city, "silverspring");
+        typeText(address, "N Call 11");
+        typeText(city, "silver spring");
         eleClick(state, 10);
         Thread.sleep(2000);
         selectFromDropDown(state, "DC");
@@ -111,10 +108,9 @@ public class CheckOutPage {
         jsClickOn(applyButton, 15);
         explicitWait(errorText, 25);
         return errorText.getText();
-
     }
 
-    public void enterDetailsOnCheckOut() throws Exception {
+    public void enterDetailsOnCheckOut() {
         typeText(debitCardNumber, "12345678");
         selectFromDropDown(expMonth, "06");
         selectFromDropDown(expYear, "2025");
@@ -128,7 +124,6 @@ public class CheckOutPage {
         typeText(emailInputElementAtCheckOutPage, "naveenrajv129@gmail.com");
         typeText(mobileNumInputElementAtCheckOutPage, "8778335842");
         eleClick(textUpdateCheckBox, 15);
-
     }
 
 }

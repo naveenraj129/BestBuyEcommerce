@@ -10,13 +10,13 @@ public class TestCase_10_CheckoutPageFilling extends BaseClass {
 
     @BeforeTest
     public void setup() {
-        testName = "tc_10_CheckOutPageFilling";
+        testName = "tc_10_checkOutPageFilling";
         testDescription = "Navigating to the checkout page and filling the form with dummy payment information";
         testCategory = "Regression";
     }
 
     @Test(priority = 10)
-    public void tc_10_CheckOutPageFilling() throws Exception {
+    public void tc_10_checkOutPageFilling() throws Exception {
         LocationPage lp = new LocationPage();
         lp.selectDeliveryAtUSA();
         HomePage hp = new HomePage();

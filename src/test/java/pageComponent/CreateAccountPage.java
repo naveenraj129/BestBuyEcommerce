@@ -10,23 +10,24 @@ public class CreateAccountPage extends WebUtility {
 
     @FindBy(xpath = "//input[@id ='firstName']")
     WebElement firstName;
+
     @FindBy(xpath = "//input[@id ='lastName']")
     WebElement lastName;
+
     @FindBy(xpath = "//input[@id ='email']")
     WebElement Email;
+
     @FindBy(xpath = "//input[@id ='fld-p1' and  @type = 'password']")
     WebElement Password;
+
     @FindBy(xpath = "//input[@id ='reenterPassword']")
     WebElement rePassword;
+
     @FindBy(xpath = "//input[@id ='phone']")
     WebElement Phone;
-    @FindBy(xpath = "//label[text() = 'Use for Account Recovery.']")
-    WebElement accountRecovery;
+
     @FindBy(xpath = "//button[text() = 'Create an Account']")
     WebElement createAccount;
-
-    @FindBy(xpath = "//strong[text()='Sorry, there was a problem creating your account.']")
-    WebElement errorMessege;
 
     @FindBy(xpath = "//div[@aria-label='Error']")
     WebElement alert;

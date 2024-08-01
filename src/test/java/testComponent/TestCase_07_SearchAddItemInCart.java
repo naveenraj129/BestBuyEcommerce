@@ -14,13 +14,13 @@ public class TestCase_07_SearchAddItemInCart extends BaseClass {
     @BeforeTest
     public void setup() {
 
-        testName = "tc_07_SearchAddItemInCart";
+        testName = "tc_07_searchAddItemInCart";
         testDescription = "Search a Item in search box and add it in cart";
         testCategory = "Regression";
     }
 
-    @Test
-    public void tc_07_SearchAddItemInCart() throws Exception {
+    @Test(priority = 7)
+    public void tc_07_searchAddItemInCart() throws Exception {
         LocationPage lp = new LocationPage();
         lp.selectDeliveryAtUSA();
         HomePage hp = new HomePage();

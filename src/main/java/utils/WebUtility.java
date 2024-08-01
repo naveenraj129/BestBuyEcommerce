@@ -33,7 +33,7 @@ public class WebUtility extends GeneralUtility {
             ChromeOptions options = new ChromeOptions();
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("firefox")) {
-            FirefoxOptions options=new FirefoxOptions();
+            FirefoxOptions options = new FirefoxOptions();
             driver = new FirefoxDriver(options);
         } else if (browser.equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();

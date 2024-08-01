@@ -7,17 +7,17 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageComponent.LocationPage;
 
-public class TestCase_02_ValidateLink extends BaseClass {
+public class TestCase_02_ValidateBestBuyWebsiteLink extends BaseClass {
 
     @BeforeTest
     public void setup() {
-        testName = "tc_02_validateLink";
-        testDescription = "Given URL Link is broken or not";
+        testName = "tc_02_validateBestBUyLink";
+        testDescription = "BestBuy Website Link is broken or not";
         testCategory = "Regression";
     }
 
     @Test(priority = 2)
-    public void tc_02_validateLink() throws Exception {
+    public void tc_02_validateBestBuyLink() throws Exception {
         LocationPage lp = new LocationPage();
         lp.selectDeliveryAtUSA();
         boolean actResponseCode = lp.urlResponseCode();
